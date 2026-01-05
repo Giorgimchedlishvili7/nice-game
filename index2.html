@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Games List</title>
+
+<style>
+    body{
+        margin:0;
+        padding:0;
+        height:100vh;
+        display:flex;
+        justify-content:center;
+        align-items:center;
+        font-family: 'Segoe UI', Arial, sans-serif;
+        color:#e5e7eb;
+        background: radial-gradient(circle at top, #1f2937, #020617);
+    }
+
+    .card{
+        width:92%;
+        max-width:720px;
+        background:#020617;
+        padding:45px;
+        border-radius:20px;
+        box-shadow:0 25px 40px rgba(0,0,0,0.6),
+                   inset 0 0 30px rgba(59,130,246,0.1);
+        text-align:center;
+        border:1px solid rgba(255,255,255,0.05);
+        animation:fade .8s ease;
+    }
+
+    @keyframes fade{
+        from{opacity:0; transform:translateY(15px);}
+        to{opacity:1; transform:translateY(0);}
+    }
+
+    h1{
+        font-size:30px;
+        color:#93c5fd;
+        margin-bottom:8px;
+        letter-spacing:.5px;
+    }
+
+    .sub{
+        color:#9ca3af;
+        font-size:15px;
+    }
+
+    ul{
+        margin-top:28px;
+        padding:0;
+    }
+
+    li{
+        list-style:none;
+        margin:16px 0;
+    }
+
+    a{
+        background:#0b1220;
+        color:#c7d2fe;
+        text-decoration:none;
+        padding:12px 22px;
+        border-radius:14px;
+        font-size:17px;
+        display:inline-block;
+        width:80%;
+        max-width:420px;
+        transition:.25s;
+        border:1px solid rgba(255,255,255,0.08);
+    }
+
+    a:hover{
+        background:#111c2f;
+        transform:scale(1.07);
+        box-shadow:0 8px 28px rgba(88,156,255,.35);
+    }
+
+    .tag{
+        margin-top:25px;
+        font-size:13px;
+        color:#9ca3af;
+    }
+</style>
+</head>
+
+<body>
+
+<div class="card" id="games">
+
+    <h1> Game Hub</h1>
+    <p class="sub">enjoy — Thank Giorgi — probably fun idk</p>
+
+    <ul>
+        <li><a href="https://sites.google.com/view/classroom6x/" target="_blank">Unblocked Games Central</a></li>
+        <li><a href="https://www.msn.com/en-xl/play" target="_blank">MSN — Gio’s Favorite</a></li>
+        <li><a href="https://www.gn-math.dev/" target="_blank">GN Math Games</a></li>
+        <li><a href="https://scratch.mit.edu/games" target="_blank">Scratch Game Projects</a></li>
+        <li><a href="https://gfpzkdtlzf.anjumanallana.in/" target="_blank">Lot of games</a></li>
+    </ul>
+
+    <p class="tag">Made with by Giorgi</p>
+     <p class="tag">More Coming SOOOOONNN just ask me what to add ;)</p>
+
+
+</div>
+
+</body>
+</html>

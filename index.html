@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Screen Time Safety</title>
+
+<style>
+  /* PAGE BACKGROUND */
+  body{
+    margin:0;
+    font-family: 'Segoe UI', Arial, sans-serif;
+    background:#d1d5db;   /* <<< GRAY BACKGROUND */
+    color: #1e293b;
+  }
+
+  /* NAVIGATION */
+  nav{
+    background: rgba(0,0,0,0.4);
+    padding: 15px 25px;
+    color: white;
+    font-weight:bold;
+    letter-spacing:0.5px;
+    backdrop-filter: blur(5px);
+  }
+
+  nav h1{
+    margin:0;
+    font-size:24px;
+    text-align:center;
+  }
+
+  /* MAIN CARD */
+  .container{
+    max-width: 850px;
+    margin: 70px auto;
+    background: #bfdbfe;
+    padding: 40px;
+    border-radius: 20px;
+    box-shadow: 0 15px 35px rgba(0,0,0,0.25),
+                inset 0 0 25px rgba(255,255,255,0.1);
+    color: #1e293b;
+    animation: fadeIn .8s ease;
+  }
+
+  @keyframes fadeIn{
+    from{opacity:0; transform: translateY(20px);}
+    to{opacity:1; transform: translateY(0);}
+  }
+
+  h2{
+    text-align:center;
+    color:#1e40af;
+    margin-bottom:20px;
+  }
+
+  p{
+    font-size:18px;
+    line-height:1.7;
+    margin-bottom:20px;
+  }
+
+  ul{
+    margin:20px 0;
+    padding:0;
+  }   
+
+  li{
+    list-style:none;
+    background:#dbeafe;
+    padding:12px 15px;
+    border-radius:12px;
+    margin-bottom:12px;
+    transition:.25s;
+  }
+
+  li:hover{
+    background:#93c5fd;
+    color:white;
+    transform: scale(1.02);
+  }
+
+  /* BLACK BUTTON */
+  #gameBtn{
+    display:none;
+    margin-top:25px;
+    padding:14px 28px;
+    font-size:18px;
+    border:none;
+    border-radius:12px;
+    background:#000;
+    color:white;
+    cursor:pointer;
+    font-weight:normal;
+    box-shadow:0 0 5px #00ffff;
+    transition:.3s;
+  }
+
+  #gameBtn:hover{
+    color:#00ffff;
+    box-shadow:0 0 10px #00ffff,
+               0 0 20px #00ffff,
+               0 0 35px #00ffff;
+    transform:scale(1.07);
+  }
+
+  footer{
+    text-align:center;
+    color:#111827;
+    margin-top:40px;
+    opacity:.9;
+    font-size:14px;
+  }
+
+  .tag{
+    font-size:13px;
+    opacity:.7;
+    text-align:right;
+  }
+</style>
+
+<script>
+function unlockGame() {
+  let password = prompt(" Enter password:");
+
+  if(password === "Giorgi1" || password === ""){
+    // Show button to index2.html
+    document.getElementById("gameBtn").style.display = "inline-block";
+    alert("Access Granted.");
+  
+  } else if(password === "Moregioweb"){
+    // Go directly to index3.html
+    alert("Special Access Granted! Enjoy specal web.");
+    window.location.href = "index3.html";
+
+  } else if(password !== null){
+    alert(" Incorrect password.");
+  }
+}
+</script>
+
+</head>
+<body>
+
+<nav>
+  <h1>Healthy Screen Time</h1>
+  <p style="font-size:14px; text-align:center; margin-top:5px;">
+     <span id="gameLink" onclick="unlockGame()" style="font-weight:bold; cursor:pointer;">ㅤㅤㅤㅤ</span> 
+  </p>
+</nav>
+
+<div class="container">
+  <h2>⚠ Screen Time Awareness</h2>
+
+  <p>
+    Doctors and child development experts warn that spending too much time playing digital 
+    <span id="gameLink" onclick="unlockGame()" style="font-weight:normal; cursor:pointer;">games</span>
+    can negatively affect young people. Overuse may cause problems such as reduced sleep,
+    poor school performance, addictive behaviors, and spending less time socializing or exercising.
+    Staying active and keeping life balanced is important.
+  </p>
+
+  <p>Excessive gaming can also:</p>
+
+  <ul>
+    <li>Lead to eye strain and headaches from screen overuse.</li>
+    <li>Increase feelings of anxiety or irritability when not playing.</li>
+    <li>Cause poor posture and physical discomfort from sitting long periods.</li>
+    <li>Make real-life responsibilities feel boring or unimportant.</li>
+    <li>Encourage aggressive behavior if violent games are overused.</li>
+    <li>Impact attention span, making schoolwork or reading harder.</li>
+  </ul>
+
+  <p>Enjoy games in moderation and balance screen time with outdoor activities, hobbies, and social time.</p>
+
+  <p class="tag"> • way better password = way better web ask if you want to know:::  Made by Giorgi</p>
+
+  <button id="gameBtn" onclick="window.location.href='index2.html'">
+     Visit Approved Game List
+  </button>
+</div>
+
+<footer>
+  Be Smart • Stay Balanced • Have Fun 
+</footer>
+
+</body>
+</html>
