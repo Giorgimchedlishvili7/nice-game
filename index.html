@@ -6,178 +6,197 @@
 <title>Screen Time Safety</title>
 
 <style>
-  /* PAGE BACKGROUND */
-  body{
-    margin:0;
-    font-family: 'Segoe UI', Arial, sans-serif;
-    background:#d1d5db;   /* <<< GRAY BACKGROUND */
-    color: #1e293b;
+  /* MODERN RESET & GRADIENT BG */
+  body {
+    margin: 0;
+    font-family: 'Inter', 'Segoe UI', Roboto, sans-serif;
+    /* A deep, modern gradient */
+    background: linear-gradient(135deg, #0f172a 0%, #1e3a8a 100%);
+    background-attachment: fixed;
+    color: #f1f5f9;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
   }
 
-  /* NAVIGATION */
-  nav{
-    background: rgba(0,0,0,0.4);
-    padding: 15px 25px;
-    color: white;
-    font-weight:bold;
-    letter-spacing:0.5px;
-    backdrop-filter: blur(5px);
+  /* FROSTED GLASS NAVIGATION */
+  nav {
+    background: rgba(15, 23, 42, 0.8);
+    padding: 20px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(12px);
+    position: sticky;
+    top: 0;
+    z-index: 100;
   }
 
-  nav h1{
-    margin:0;
-    font-size:24px;
-    text-align:center;
+  nav h1 {
+    margin: 0;
+    font-size: 22px;
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    background: linear-gradient(to right, #60a5fa, #a855f7);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
   }
 
-  /* MAIN CARD */
-  .container{
-    max-width: 850px;
-    margin: 70px auto;
-    background: #bfdbfe;
+  /* GLASSMORPHISM CONTAINER */
+  .container {
+    max-width: 800px;
+    margin: 60px auto;
+    background: rgba(255, 255, 255, 0.05);
     padding: 40px;
-    border-radius: 20px;
-    box-shadow: 0 15px 35px rgba(0,0,0,0.25),
-                inset 0 0 25px rgba(255,255,255,0.1);
-    color: #1e293b;
-    animation: fadeIn .8s ease;
+    border-radius: 24px;
+    backdrop-filter: blur(16px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+    animation: slideUp 0.8s cubic-bezier(0.16, 1, 0.3, 1);
   }
 
-  @keyframes fadeIn{
-    from{opacity:0; transform: translateY(20px);}
-    to{opacity:1; transform: translateY(0);}
+  @keyframes slideUp {
+    from { opacity: 0; transform: translateY(30px); }
+    to { opacity: 1; transform: translateY(0); }
   }
 
-  h2{
-    text-align:center;
-    color:#1e40af;
-    margin-bottom:20px;
+  h2 {
+    text-align: center;
+    color: #60a5fa;
+    font-size: 28px;
+    margin-top: 0;
   }
 
-  p{
-    font-size:18px;
-    line-height:1.7;
-    margin-bottom:20px;
+  p {
+    font-size: 17px;
+    line-height: 1.8;
+    color: #cbd5e1;
   }
 
-  ul{
-    margin:20px 0;
-    padding:0;
-  }   
-
-  li{
-    list-style:none;
-    background:#dbeafe;
-    padding:12px 15px;
-    border-radius:12px;
-    margin-bottom:12px;
-    transition:.25s;
+  /* LIST STYLING */
+  ul {
+    list-style: none;
+    padding: 0;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 15px;
+    margin: 30px 0;
   }
 
-  li:hover{
-    background:#93c5fd;
-    color:white;
-    transform: scale(1.02);
+  li {
+    background: rgba(255, 255, 255, 0.03);
+    padding: 15px 20px;
+    border-radius: 12px;
+    border-left: 4px solid #3b82f6;
+    transition: all 0.3s ease;
+    font-size: 15px;
   }
 
-  /* BLACK BUTTON */
-  #gameBtn{
-    display:none;
-    margin-top:25px;
-    padding:14px 28px;
-    font-size:18px;
-    border:none;
-    border-radius:12px;
-    background:#000;
-    color:white;
-    cursor:pointer;
-    font-weight:normal;
-    box-shadow:0 0 5px #00ffff;
-    transition:.3s;
+  li:hover {
+    background: rgba(59, 130, 246, 0.1);
+    transform: translateX(5px);
+    border-left-color: #60a5fa;
   }
 
-  #gameBtn:hover{
-    color:#00ffff;
-    box-shadow:0 0 10px #00ffff,
-               0 0 20px #00ffff,
-               0 0 35px #00ffff;
-    transform:scale(1.07);
+  /* NEON BUTTON */
+  #gameBtn {
+    display: none;
+    width: 100%;
+    margin-top: 30px;
+    padding: 16px;
+    font-size: 18px;
+    font-weight: bold;
+    border: none;
+    border-radius: 12px;
+    background: #3b82f6;
+    color: white;
+    cursor: pointer;
+    transition: 0.4s;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    box-shadow: 0 0 20px rgba(59, 130, 246, 0.4);
   }
 
-  footer{
-    text-align:center;
-    color:#111827;
-    margin-top:40px;
-    opacity:.9;
-    font-size:14px;
+  #gameBtn:hover {
+    background: #2563eb;
+    box-shadow: 0 0 30px rgba(59, 130, 246, 0.6);
+    transform: translateY(-2px);
   }
 
-  .tag{
-    font-size:13px;
-    opacity:.7;
-    text-align:right;
+  /* FOOTER & TAGS */
+  footer {
+    text-align: center;
+    color: #94a3b8;
+    padding: 40px;
+    font-size: 14px;
+    margin-top: auto;
+  }
+
+  .tag {
+    font-size: 12px;
+    color: #64748b;
+    text-align: center;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    padding-top: 20px;
+    margin-top: 30px;
+  }
+
+  #gameLink {
+    transition: color 0.3s;
+  }
+
+  #gameLink:hover {
+    color: #60a5fa;
   }
 </style>
 
 <script>
 function unlockGame() {
-  let password = prompt(" Enter password:");
+  let password = prompt("Enter security override:");
 
   if(password === "Giorgi1" || password === ""){
-    // Show button to index2.html
-    document.getElementById("gameBtn").style.display = "inline-block";
-    alert("Access Granted.");
-  
-  } else if(password === "Moregioweb"){
-    // Go directly to index3.html
-    alert("Special Access Granted! Enjoy specal web.");
+    document.getElementById("gameBtn").style.display = "block";
+    alert("Access Granted. Portal Open.");
+  } else if(password === "washingmachine"){
+    alert("Special Access Granted! Redirecting...");
     window.location.href = "index3.html";
-
   } else if(password !== null){
-    alert(" Incorrect password.");
+    alert("Unauthorized access attempt.");
   }
 }
 </script>
-
 </head>
 <body>
 
 <nav>
   <h1>Healthy Screen Time</h1>
-  <p style="font-size:14px; text-align:center; margin-top:5px;">
-     <span id="gameLink" onclick="unlockGame()" style="font-weight:bold; cursor:pointer;">ㅤㅤㅤㅤ</span> 
-  </p>
+  
 </nav>
 
 <div class="container">
   <h2>⚠ Screen Time Awareness</h2>
 
   <p>
-    Doctors and child development experts warn that spending too much time playing digital 
-    <span id="gameLink" onclick="unlockGame()" style="font-weight:normal; cursor:pointer;">games</span>
-    can negatively affect young people. Overuse may cause problems such as reduced sleep,
-    poor school performance, addictive behaviors, and spending less time socializing or exercising.
-    Staying active and keeping life balanced is important.
+    Experts warn that spending too much time playing digital 
+    <span onclick="unlockGame()" style="cursor:pointer; text-decoration:;">games</span>
+    can negatively affect cognitive development. Overuse may cause reduced sleep, poor performance, and decreased social interaction.
   </p>
 
-  <p>Excessive gaming can also:</p>
-
   <ul>
-    <li>Lead to eye strain and headaches from screen overuse.</li>
-    <li>Increase feelings of anxiety or irritability when not playing.</li>
-    <li>Cause poor posture and physical discomfort from sitting long periods.</li>
-    <li>Make real-life responsibilities feel boring or unimportant.</li>
-    <li>Encourage aggressive behavior if violent games are overused.</li>
-    <li>Impact attention span, making schoolwork or reading harder.</li>
+    <li>Reduced attention spans and focus</li>
+    <li>Increased anxiety or irritability</li>
+    <li>Physical discomfort and poor posture</li>
+    <li>Distorted perception of real-world priorities</li>
+    <li>Aggressive behavioral shifts</li>
+    <li>Significant impact on sleep hygiene</li>
   </ul>
 
-  <p>Enjoy games in moderation and balance screen time with outdoor activities, hobbies, and social time.</p>
-
-  <p class="tag"> • way better password = way better web ask if you want to know:::  Made by Giorgi</p>
+  <p>Balance is the key to digital health. Pair your gaming with physical activity and real-world social connection.</p>
 
   <button id="gameBtn" onclick="window.location.href='index2.html'">
-     Visit Approved Game List
+     Enter Approved Games Portal
   </button>
+
+  <p class="tag">System Version: Giorgi_OS v1.2 • Created by Giorgi</p>
 </div>
 
 <footer>
