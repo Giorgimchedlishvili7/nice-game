@@ -6,11 +6,9 @@
 <title>Screen Time Safety</title>
 
 <style>
-  /* MODERN RESET & GRADIENT BG */
   body {
     margin: 0;
     font-family: 'Inter', 'Segoe UI', Roboto, sans-serif;
-    /* A deep, modern gradient */
     background: linear-gradient(135deg, #0f172a 0%, #1e3a8a 100%);
     background-attachment: fixed;
     color: #f1f5f9;
@@ -19,7 +17,6 @@
     flex-direction: column;
   }
 
-  /* FROSTED GLASS NAVIGATION */
   nav {
     background: rgba(15, 23, 42, 0.8);
     padding: 20px;
@@ -41,7 +38,6 @@
     -webkit-text-fill-color: transparent;
   }
 
-  /* GLASSMORPHISM CONTAINER */
   .container {
     max-width: 800px;
     margin: 60px auto;
@@ -66,13 +62,17 @@
     margin-top: 0;
   }
 
+  h3 {
+    color: #a5b4fc;
+    margin-top: 40px;
+  }
+
   p {
     font-size: 17px;
     line-height: 1.8;
     color: #cbd5e1;
   }
 
-  /* LIST STYLING */
   ul {
     list-style: none;
     padding: 0;
@@ -97,7 +97,6 @@
     border-left-color: #60a5fa;
   }
 
-  /* NEON BUTTON */
   #gameBtn {
     display: none;
     width: 100%;
@@ -122,7 +121,6 @@
     transform: translateY(-2px);
   }
 
-  /* FOOTER & TAGS */
   footer {
     text-align: center;
     color: #94a3b8;
@@ -138,14 +136,6 @@
     border-top: 1px solid rgba(255, 255, 255, 0.1);
     padding-top: 20px;
     margin-top: 30px;
-  }
-
-  #gameLink {
-    transition: color 0.3s;
-  }
-
-  #gameLink:hover {
-    color: #60a5fa;
   }
 </style>
 
@@ -165,42 +155,71 @@ function unlockGame() {
 }
 </script>
 </head>
+
 <body>
 
 <nav>
   <h1>Healthy Screen Time</h1>
-  
 </nav>
 
 <div class="container">
   <h2>⚠ Screen Time Awareness</h2>
 
   <p>
-    Experts warn that spending too much time playing digital 
-    <span onclick="unlockGame()" style="cursor:pointer; text-decoration:;">games</span>
-    can negatively affect cognitive development. Overuse may cause reduced sleep, poor performance, and decreased social interaction.
+    In today’s digital world, screens are everywhere. From entertainment to education,
+    devices play a major role in daily life. However, experts warn that spending excessive
+    time playing digital 
+    <span onclick="unlockGame()" style="cursor:pointer;">games</span>
+    or browsing online content without limits can negatively affect cognitive development,
+    emotional regulation, and overall well-being.
+  </p>
+
+  <p>
+    Long, uninterrupted screen sessions may lead to reduced sleep quality, decreased academic
+    performance, eye strain, and weaker real-world social skills. Awareness is the first step
+    toward building healthier digital habits.
   </p>
 
   <ul>
-    <li>Reduced attention spans and focus</li>
-    <li>Increased anxiety or irritability</li>
-    <li>Physical discomfort and poor posture</li>
-    <li>Distorted perception of real-world priorities</li>
-    <li>Aggressive behavioral shifts</li>
-    <li>Significant impact on sleep hygiene</li>
+    <li>Reduced attention spans and difficulty maintaining focus</li>
+    <li>Increased anxiety, stress, or emotional irritability</li>
+    <li>Physical discomfort including eye strain and poor posture</li>
+    <li>Distorted perception of real-world priorities and time management</li>
+    <li>Aggressive or impulsive behavioral changes</li>
+    <li>Disrupted sleep cycles and reduced sleep quality</li>
   </ul>
 
-  <p>Balance is the key to digital health. Pair your gaming with physical activity and real-world social connection.</p>
+  <h3>Why This Matters</h3>
+  <p>
+    Developing healthy screen habits early helps build discipline, self-control, and
+    long-term mental resilience. Technology itself is not harmful, but imbalance can
+    create challenges that affect productivity, relationships, and personal growth.
+  </p>
+
+  <h3>Healthy Digital Habits</h3>
+  <ul>
+    <li>Take regular breaks using the 20-20-20 rule</li>
+    <li>Balance screen time with physical activity and outdoor time</li>
+    <li>Set clear daily limits for gaming and entertainment</li>
+    <li>Prioritize sleep and device-free time before bed</li>
+    <li>Engage in offline hobbies and social interactions</li>
+    <li>Use technology intentionally, not automatically</li>
+  </ul>
+
+  <p>
+    Balance is the key to digital health. When used responsibly, games and technology
+    can be enjoyable, creative, and educational tools rather than distractions.
+  </p>
 
   <button id="gameBtn" onclick="window.location.href='index2.html'">
-     Enter Approved Games Portal
+    Enter Approved Games Portal
   </button>
 
   <p class="tag">System Version: Giorgi_OS v1.2 • Created by Giorgi</p>
 </div>
 
 <footer>
-  Be Smart • Stay Balanced • Have Fun 
+  Be Smart • Stay Balanced • Have Fun • Protect Your Mind
 </footer>
 
 </body>
