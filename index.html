@@ -143,16 +143,35 @@
 function unlockGame() {
   let password = prompt("Enter security override:");
 
-  if(password === "Giorgi1" || password === ""){
+  if (password === "Giorgi1" || password === "") {
     document.getElementById("gameBtn").style.display = "block";
     alert("Access Granted. Portal Open.");
-  } else if(password === "washingmachine"){
+  } else if (password === "washingmachine") {
     alert("Special Access Granted! Redirecting...");
     window.location.href = "index3.html";
-  } else if(password !== null){
+  }  else if (password === "04121401") {
+    alert("SECRET OLY DEV! Redirecting...");
+    window.location.href = "index4.html";
+  } else if (password !== null) {
     alert("Unauthorized access attempt.");
   }
 }
+
+// 🔐 Hidden keyboard backdoor
+let secret = "";
+const code = "04121401";
+
+document.addEventListener("keydown", (e) => {
+  if (e.key >= "0" && e.key <= "9") {
+    secret += e.key;
+    if (secret.length > code.length) {
+      secret = secret.slice(-code.length);
+    }
+    if (secret === code) {
+      window.location.href = "index4.html";
+    }
+  }
+});
 </script>
 </head>
 
@@ -176,8 +195,7 @@ function unlockGame() {
 
   <p>
     Long, uninterrupted screen sessions may lead to reduced sleep quality, decreased academic
-    performance, eye strain, and weaker real-world social skills. Awareness is the first step
-    toward building healthier digital habits.
+    performance, eye strain, and weaker real-world social skills.
   </p>
 
   <ul>
@@ -188,28 +206,6 @@ function unlockGame() {
     <li>Aggressive or impulsive behavioral changes</li>
     <li>Disrupted sleep cycles and reduced sleep quality</li>
   </ul>
-
-  <h3>Why This Matters</h3>
-  <p>
-    Developing healthy screen habits early helps build discipline, self-control, and
-    long-term mental resilience. Technology itself is not harmful, but imbalance can
-    create challenges that affect productivity, relationships, and personal growth.
-  </p>
-
-  <h3>Healthy Digital Habits</h3>
-  <ul>
-    <li>Take regular breaks using the 20-20-20 rule</li>
-    <li>Balance screen time with physical activity and outdoor time</li>
-    <li>Set clear daily limits for gaming and entertainment</li>
-    <li>Prioritize sleep and device-free time before bed</li>
-    <li>Engage in offline hobbies and social interactions</li>
-    <li>Use technology intentionally, not automatically</li>
-  </ul>
-
-  <p>
-    Balance is the key to digital health. When used responsibly, games and technology
-    can be enjoyable, creative, and educational tools rather than distractions.
-  </p>
 
   <button id="gameBtn" onclick="window.location.href='index2.html'">
     Enter Approved Games Portal
