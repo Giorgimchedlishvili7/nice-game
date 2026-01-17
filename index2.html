@@ -1,94 +1,151 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Games List</title>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Game Hub</title>
 
 <style>
-    body{
-        margin:0;
-        padding:0;
-        height:100vh;
-        display:flex;
-        justify-content:center;
-        align-items:center;
-        font-family: 'Segoe UI', Arial, sans-serif;
-        color:#e5e7eb;
-        background: radial-gradient(circle at top, #1f2937, #020617);
-    }
+:root{
+    --bg-main:#020617;
+    --bg-card:rgba(2,6,23,.85);
+    --accent:#60a5fa;
+    --accent-soft:#93c5fd;
+    --text:#e5e7eb;
+    --muted:#9ca3af;
+}
 
+*{
+    box-sizing:border-box;
+}
+
+body{
+    margin:0;
+    min-height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    font-family:'Segoe UI', system-ui, sans-serif;
+    background:
+        radial-gradient(circle at top, #1f2937 0%, #020617 55%),
+        linear-gradient(135deg, #020617, #020617);
+    color:var(--text);
+}
+
+/* Card */
+.card{
+    width:92%;
+    max-width:760px;
+    padding:48px;
+    border-radius:24px;
+    background:var(--bg-card);
+    backdrop-filter:blur(16px);
+    border:1px solid rgba(255,255,255,.06);
+    box-shadow:
+        0 30px 60px rgba(0,0,0,.65),
+        inset 0 0 40px rgba(96,165,250,.08);
+    text-align:center;
+    animation:fadeUp .8s ease;
+}
+
+@keyframes fadeUp{
+    from{opacity:0; transform:translateY(20px);}
+    to{opacity:1; transform:translateY(0);}
+}
+
+h1{
+    font-size:34px;
+    margin:0 0 10px;
+    letter-spacing:.6px;
+    color:var(--accent-soft);
+    text-shadow:0 0 18px rgba(96,165,250,.35);
+}
+
+.sub{
+    font-size:15px;
+    color:var(--muted);
+    margin-bottom:34px;
+}
+
+/* List */
+ul{
+    list-style:none;
+    padding:0;
+    margin:0;
+}
+
+li{
+    margin:18px 0;
+}
+
+/* Links */
+a{
+    position:relative;
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    width:85%;
+    max-width:440px;
+    padding:14px 26px;
+    font-size:17px;
+    color:#c7d2fe;
+    text-decoration:none;
+    border-radius:16px;
+    background:linear-gradient(180deg, #0b1220, #070c18);
+    border:1px solid rgba(255,255,255,.08);
+    transition:.25s ease;
+    overflow:hidden;
+}
+
+/* glow layer */
+a::before{
+    content:"";
+    position:absolute;
+    inset:0;
+    background:linear-gradient(
+        120deg,
+        transparent,
+        rgba(96,165,250,.35),
+        transparent
+    );
+    opacity:0;
+    transition:.35s;
+}
+
+a:hover{
+    transform:translateY(-2px) scale(1.05);
+    box-shadow:
+        0 12px 32px rgba(96,165,250,.45),
+        0 0 25px rgba(96,165,250,.35);
+}
+
+a:hover::before{
+    opacity:1;
+}
+
+/* Footer tags */
+.tag{
+    margin-top:26px;
+    font-size:13px;
+    color:var(--muted);
+    opacity:.85;
+}
+
+/* Mobile tweak */
+@media(max-width:520px){
     .card{
-        width:92%;
-        max-width:720px;
-        background:#020617;
-        padding:45px;
-        border-radius:20px;
-        box-shadow:0 25px 40px rgba(0,0,0,0.6),
-                   inset 0 0 30px rgba(59,130,246,0.1);
-        text-align:center;
-        border:1px solid rgba(255,255,255,0.05);
-        animation:fade .8s ease;
+        padding:36px 24px;
     }
-
-    @keyframes fade{
-        from{opacity:0; transform:translateY(15px);}
-        to{opacity:1; transform:translateY(0);}
-    }
-
     h1{
-        font-size:30px;
-        color:#93c5fd;
-        margin-bottom:8px;
-        letter-spacing:.5px;
+        font-size:28px;
     }
-
-    .sub{
-        color:#9ca3af;
-        font-size:15px;
-    }
-
-    ul{
-        margin-top:28px;
-        padding:0;
-    }
-
-    li{
-        list-style:none;
-        margin:16px 0;
-    }
-
-    a{
-        background:#0b1220;
-        color:#c7d2fe;
-        text-decoration:none;
-        padding:12px 22px;
-        border-radius:14px;
-        font-size:17px;
-        display:inline-block;
-        width:80%;
-        max-width:420px;
-        transition:.25s;
-        border:1px solid rgba(255,255,255,0.08);
-    }
-
-    a:hover{
-        background:#111c2f;
-        transform:scale(1.07);
-        box-shadow:0 8px 28px rgba(88,156,255,.35);
-    }
-
-    .tag{
-        margin-top:25px;
-        font-size:13px;
-        color:#9ca3af;
-    }
+}
 </style>
 </head>
 
 <body>
 
-<div class="card" id="games">
+<div class="card">
 
     <h1> Game Hub</h1>
     <p class="sub">enjoy — Thank Giorgi — probably fun idk</p>
@@ -98,12 +155,11 @@
         <li><a href="https://www.msn.com/en-xl/play" target="_blank">MSN — Gio’s Favorite</a></li>
         <li><a href="https://www.gn-math.dev/" target="_blank">GN Math Games</a></li>
         <li><a href="https://scratch.mit.edu/games" target="_blank">Scratch Game Projects</a></li>
-        <li><a href="https://gfpzkdtlzf.anjumanallana.in/" target="_blank">Lot of games</a></li>
+        <li><a href="https://gfpzkdtlzf.anjumanallana.in/" target="_blank">Lot of Games</a></li>
     </ul>
 
-    <p class="tag">Made with by Giorgi</p>
-     <p class="tag">More Coming SOOOOONNN just ask me what to add ;)</p>
-
+    <p class="tag">Made with  by Giorgi</p>
+    <p class="tag">More coming SOOOOONNN — just ask what to add 😉</p>
 
 </div>
 
