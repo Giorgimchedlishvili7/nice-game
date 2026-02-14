@@ -149,9 +149,12 @@ function unlockGame() {
   } else if (password === "washingmachine") {
     alert("Special Access Granted! Redirecting...");
     window.location.href = "index3.html";
-  }  else if (password === "04121401") {
+  } else if (password === "04121401") {
     alert("SECRET OLY DEV! Redirecting...");
     window.location.href = "index4.html";
+  } else if (password === "chatgio") { // Added your new password here
+    alert("ClassChat Access Granted! Redirecting...");
+    window.location.href = "index5.html";
   } else if (password !== null) {
     alert("Unauthorized access attempt.");
   }
@@ -159,16 +162,26 @@ function unlockGame() {
 
 // 🔐 Hidden keyboard backdoor
 let secret = "";
-const code = "04121401";
+const code4 = "04121401"; // Code for index4
+const code5 = "555";      // Secret code for index5 (Type 5 three times)
 
 document.addEventListener("keydown", (e) => {
   if (e.key >= "0" && e.key <= "9") {
     secret += e.key;
-    if (secret.length > code.length) {
-      secret = secret.slice(-code.length);
+    
+    // Keep the string length manageable
+    if (secret.length > 8) {
+      secret = secret.slice(-8);
     }
-    if (secret === code) {
+
+    // Check for Index 4
+    if (secret.endsWith(code4)) {
       window.location.href = "index4.html";
+    }
+    
+    // Check for Index 5
+    if (secret.endsWith(code5)) {
+      window.location.href = "index5.html";
     }
   }
 });
@@ -188,7 +201,7 @@ document.addEventListener("keydown", (e) => {
     In today’s digital world, screens are everywhere. From entertainment to education,
     devices play a major role in daily life. However, experts warn that spending excessive
     time playing digital 
-    <span onclick="unlockGame()" style="cursor:pointer;">games</span>
+    <span onclick="unlockGame()" style="cursor:pointer; color:#60a5fa; text-decoration:underline;">games</span>
     or browsing online content without limits can negatively affect cognitive development,
     emotional regulation, and overall well-being.
   </p>
@@ -211,7 +224,7 @@ document.addEventListener("keydown", (e) => {
     Enter Approved Games Portal
   </button>
 
-  <p class="tag">System Version: Giorgi_OS v1.2 • Created by Giorgi</p>
+  <p class="tag">System Version: Giorgi_OS v1.3 • Created by Giorgi</p>
 </div>
 
 <footer>
